@@ -11,8 +11,8 @@ Ensure you have Node.js installed on your machine. You can download it from [Nod
 1. Clone the repository:
 
    ```bash
-   git clone https://your-repository-url.git
-   cd your-repository-directory
+   git clone git@github.com:jacomyal/canvas-benchmark
+   cd canvas-benchmark
    ```
 
 2. Install dependencies:
