@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      #message {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      #controls {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 1em;
+        background: #ffffffcc;
+      }
+    </style>
+    <title>Comparison of methods to draw thick lines on a canvas</title>
+  </head>
+  <body>
+    <div id="message">
+      <span>Click on various places of the screen</span>
+    </div>
+    <canvas id="stage"></canvas>
+    <section id="controls">
+      <div>
+        <input type="radio" id="fill" name="method" checked />
+        <label for="fill">Fill-based solution</label>
+      </div>
+      <div>
+        <input type="radio" id="stroke" name="method" />
+        <label for="stroke">Stroke-based solution</label>
+      </div>
+    </section>
+    <script type="module" src="example.ts"></script>
+  </body>
+</html>

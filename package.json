@@ -1,0 +1,15 @@
+{
+  "name": "canvas-benchmark",
+  "description": "A small project to showcase Vitest benchmark capabilities in a Browser environment",
+  "scripts": {
+    "start": "vite",
+    "bench": "vitest bench"
+  },
+  "devDependencies": {
+    "@vitest/browser": "^1.5.3",
+    "playwright": "^1.43.1",
+    "prettier": "^3.2.5",
+    "vite": "^5.2.11",
+    "vitest": "1.5.3"
+  }
+}

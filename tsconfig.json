@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "nodenext",
+    "target": "es2017"
+  }
+}
