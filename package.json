@@ -3,7 +3,8 @@
   "description": "A small project to showcase Vitest benchmark capabilities in a Browser environment",
   "scripts": {
     "start": "vite",
-    "bench": "vitest bench"
+    "test": "vitest test ./src/index.spec.ts",
+    "bench": "vitest bench ./src/index.bench.ts"
   },
   "devDependencies": {
     "@vitest/browser": "^1.5.3",

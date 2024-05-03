@@ -1,6 +1,6 @@
 import { bench, describe } from "vitest";
 
-import { fillBasedRectangle, strokeBasedRectangle } from "../src";
+import { fillBasedRectangle, strokeBasedRectangle } from "./index";
 
 const SIZE = 1000;
 

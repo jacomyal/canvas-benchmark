@@ -3,16 +3,24 @@ export type Point = {
   y: number;
 };
 
-/**
- * This function draws a thick line on a CanvasRenderingContext2D using a filled rectangle.
- */
-export function fillBasedRectangle(
+export type DrawingFn = (
   ctx: CanvasRenderingContext2D,
   from: Point,
   to: Point,
   thickness: number,
   color: string,
-): void {
+) => void;
+
+/**
+ * This function draws a thick line on a CanvasRenderingContext2D using a filled rectangle.
+ */
+export const fillBasedRectangle: DrawingFn = (
+  ctx,
+  from,
+  to,
+  thickness,
+  color,
+) => {
   const dx = to.x - from.x;
   const dy = to.y - from.y;
   const d = Math.sqrt(dx ** 2 + dy ** 2);
@@ -24,18 +32,18 @@ export function fillBasedRectangle(
   ctx.rotate(angle);
   ctx.fillRect(0, 0 - thickness / 2, d, thickness);
   ctx.restore();
-}
+};
 
 /**
  * This function draws a rectangle on a CanvasRenderingContext2D using a stroke with a wide thickness.
  */
-export function strokeBasedRectangle(
-  ctx: CanvasRenderingContext2D,
-  from: Point,
-  to: Point,
-  thickness: number,
-  color: string,
-): void {
+export const strokeBasedRectangle: DrawingFn = (
+  ctx,
+  from,
+  to,
+  thickness,
+  color,
+) => {
   ctx.beginPath();
   ctx.moveTo(from.x, from.y);
   ctx.lineTo(to.x, to.y);
@@ -43,4 +51,4 @@ export function strokeBasedRectangle(
   ctx.lineWidth = thickness;
   ctx.strokeStyle = color;
   ctx.stroke();
-}
+};
