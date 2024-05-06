@@ -4,7 +4,7 @@
 
 This project demonstrates how to set up and run benchmarks for TypeScript functions in a headless browser environment using Vitest and Playwright. It demonstrates it by comparing two different methods for drawing rectangles on a canvas.
 
-### Getting Started
+## Getting Started
 
 Ensure you have Node.js installed on your machine. You can download it from [Node.js official website](https://nodejs.org/).
 
@@ -27,29 +27,48 @@ Ensure you have Node.js installed on your machine. You can download it from [Nod
    npx playwright install
    ```
 
-4. Run the interactive example to check that the two functions work properly:
+## Example
 
-   ```bash
-   npm run start
-   ```
+Run the interactive example to check that the two functions work properly:
 
-5. Run the benchmarks defined in `benchmark/index.bench.ts` and output the results:
-   ```bash
-   npm run bench
-   ```
+```bash
+npm run start
+```
+
+You can also build the example running:
+
+```bash
+npm run build
+```
+
+## Unit Tests
+
+Run the unit tests defined in `src/index.spec.ts` in a browser environment and output the results:
+
+```bash
+npm run test
+```
+
+## Benchmark
+
+Run the benchmark defined in `src/index.bench.ts` in a browser environment and output the results:
+
+```bash
+npm run bench
+```
 
 You should see an output looking like:
 
 ```
-RERUN  benchmark/index.bench.ts x3
-✓ benchmark/index.bench.ts (2) 6405ms
+RERUN  src/index.bench.ts x3
+✓ src/index.bench.ts (2) 6405ms
   ✓ Canvas methods to draw a thick line (2) 6401ms
     name                             hz     min       max    mean     p75     p99    p995    p999       rme  samples
   · Using a filled rectangle  20,836.25  0.0000  1,299.90  0.0480  0.0000  0.1000  0.1000  0.1000  ±182.26%    29127
   · Using a wide stroke       22,818.67  0.0000  1,581.90  0.0438  0.0000  0.1000  0.1000  0.1000  ±188.92%    37450   fastest
 
 BENCH  Summary
- Using a wide stroke - benchmark/index.bench.ts > Canvas methods to draw a thick line
+ Using a wide stroke - src/index.bench.ts > Canvas methods to draw a thick line
    1.10x faster than Using a filled rectangle
 
 PASS  Waiting for file changes...
