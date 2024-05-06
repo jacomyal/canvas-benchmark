@@ -1,4 +1,4 @@
-import { type Point, fillBasedRectangle, strokeBasedRectangle } from "../src";
+import { type Point, fillBasedThickLine, strokeBasedThickLine } from "../src";
 
 /**
  * This example will listen to "click" events on the canvas, and join the clicked points with thick lines of random
@@ -13,6 +13,8 @@ function init() {
   const ctx = canvas.getContext("2d");
 
   const state: { lastClickedPosition?: Point } = {};
+
+  // Handle clicks:
   canvas.addEventListener("click", (e) => {
     const position = {
       x: e.clientX,
@@ -30,8 +32,8 @@ function init() {
       // Retrieve which method the user wants to use:
       const method =
         document.querySelector('input[type="radio"]:checked').id === "fill"
-          ? fillBasedRectangle
-          : strokeBasedRectangle;
+          ? fillBasedThickLine
+          : strokeBasedThickLine;
 
       // Draw a thick line from the last clicked point to the new clicked point:
       method(ctx, from, to, thickness, color);
@@ -39,6 +41,12 @@ function init() {
 
     // Store clicked position:
     state.lastClickedPosition = position;
+  });
+
+  // Handle resize:
+  window.addEventListener("resize", () => {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
   });
 }
 

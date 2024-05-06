@@ -3,7 +3,7 @@ export type Point = {
   y: number;
 };
 
-export type DrawingFn = (
+export type ThickLineFunction = (
   ctx: CanvasRenderingContext2D,
   from: Point,
   to: Point,
@@ -14,7 +14,7 @@ export type DrawingFn = (
 /**
  * This function draws a thick line on a CanvasRenderingContext2D using a filled rectangle.
  */
-export const fillBasedRectangle: DrawingFn = (
+export const fillBasedThickLine: ThickLineFunction = (
   ctx,
   from,
   to,
@@ -37,7 +37,7 @@ export const fillBasedRectangle: DrawingFn = (
 /**
  * This function draws a rectangle on a CanvasRenderingContext2D using a stroke with a wide thickness.
  */
-export const strokeBasedRectangle: DrawingFn = (
+export const strokeBasedThickLine: ThickLineFunction = (
   ctx,
   from,
   to,

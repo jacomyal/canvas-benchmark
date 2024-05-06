@@ -1,6 +1,6 @@
 import { bench, describe } from "vitest";
 
-import { fillBasedRectangle, strokeBasedRectangle } from "./index";
+import { fillBasedThickLine, strokeBasedThickLine } from "./index";
 
 const SIZE = 1000;
 
@@ -17,8 +17,8 @@ describe("Canvas methods to draw a thick line", () => {
   const ctx = canvas.getContext("2d");
 
   [
-    { label: "Using a filled rectangle", methodToBench: fillBasedRectangle },
-    { label: "Using a wide stroke", methodToBench: strokeBasedRectangle },
+    { label: "Using a filled rectangle", methodToBench: fillBasedThickLine },
+    { label: "Using a wide stroke", methodToBench: strokeBasedThickLine },
   ].forEach(({ label, methodToBench }) => {
     bench(
       label,

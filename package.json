@@ -2,7 +2,8 @@
   "name": "canvas-benchmark",
   "description": "A small project to showcase Vitest benchmark capabilities in a Browser environment",
   "scripts": {
-    "start": "vite",
+    "start": "vite --open",
+    "build": "vite build",
     "test": "vitest test ./src/index.spec.ts",
     "bench": "vitest bench ./src/index.bench.ts"
   },

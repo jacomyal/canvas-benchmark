@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, test } from "vitest";
-import { DrawingFn, fillBasedRectangle, strokeBasedRectangle } from "./index";
+import { ThickLineFunction, fillBasedThickLine, strokeBasedThickLine } from "./index";
 
 const SIZE = 1000;
 
@@ -28,7 +28,7 @@ afterEach<TestContext>(({ canvas }) => {
   canvas.remove();
 });
 
-function testFunction(fn: DrawingFn) {
+function testFunction(fn: ThickLineFunction) {
   test<TestContext>("it should colorize pixels", ({ canvas, ctx }) => {
     // Resize the canvas to a 1px square:
     canvas.width = 1;
@@ -47,8 +47,8 @@ function testFunction(fn: DrawingFn) {
 }
 
 describe("fillBasedRectangle", () => {
-  testFunction(fillBasedRectangle);
+  testFunction(fillBasedThickLine);
 });
 describe("strokeBasedRectangle", () => {
-  testFunction(strokeBasedRectangle);
+  testFunction(strokeBasedThickLine);
 });
